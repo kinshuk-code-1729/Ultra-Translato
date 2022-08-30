@@ -1,0 +1,90 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head runat="server">
+    <title>Test Value</title>
+    <script type="text/javascript">
+      function SelectedTextValue(ele) {
+        if (ele.selectedIndex > 0) {
+          var selectedText = ele.options[ele.selectedIndex].innerHTML;
+          var selectedValue = ele.value;
+          document.getElementById("a").value = selectedText;
+        } else {
+          document.getElementById("a").value = "";
+        }
+      }
+
+      function SelectedTextValue1(ele) {
+        if (ele.selectedIndex > 0) {
+          var selectedText = ele.options[ele.selectedIndex].innerHTML;
+          var selectedValue = ele.value;
+          document.getElementById("b").value = selectedText;
+        } else {
+          document.getElementById("b").value = "";
+        }
+      }
+    </script>
+     <!-- <link href="{{ url_for('static', path='/css/innerstyle.css') }}" rel="stylesheet"> -->
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <style>
+      .cont {
+        top: 10%;
+        height: 50%;
+      }
+      
+    </style>
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+  </head>
+  <body>
+    <div class="cont">
+      <form  method="post" id="myForm">
+        <div align="center">
+          <h3>Select Source Language</h3>
+          <select
+            name="ddlContent"
+            id="ddlContent"
+            onchange="SelectedTextValue(this)"
+          >
+            <option selected="selected" value="">Language</option>
+            <option value="1">Hindi</option>
+            <option value="2">English</option>
+          </select>
+         <label for="a" ><input  name="a" type="text" id="a" /></label>
+          <!--------------------------------------------------------------------------------->
+          <br /><br /><br /><br />
+          <h3>Select Target Language</h3>
+
+          <select
+            name="ddlContent"
+            id="ddlContent"
+            onchange="SelectedTextValue1(this)"
+          >
+            <option selected="selected" value="">Language</option>
+            <option value="1">English</option>
+            <option value="2">Hindi</option>
+          </select>
+          <label for="b" ><input  name="b" type="text" id="b" /></label>
+        </div>
+        <br />
+        <br />
+        <br />
+        <div id="responseArea1"></div>
+        <div id="responseAre"></div>
+        <input type="button" value="Start" onclick="submitForm()">
+        <center>
+          <div >
+          
+            <a href="pdf" download="caption.txt"><input type="button" value="Download"></a>
+            <a href="speak"><button>Speak</button></a>
+          </div>
+        </center>
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="{{ url_for('static', path='/css/innerstyle.css') }}" rel="stylesheet">
+
+    <!-- <link rel="stylesheet" href="innerstyle.css" /> -->
+  </head>
+  <body>
+    <div class="main">
+     <form method="post" id="myForm">
+     <div>
+      <label for="a" style="font-size: 20px">Input language:</label>
+      <input type="text" name="a" id="a" />
+      <label for="b" style="font-size: 20px">Output language:</label>
+      <input type="text" name="b" id="b" />
+      <input type="button" value="Start" onclick="submitForm()">
+     </div>
+    </form>
+    <div id="responseArea1"></div>
+    <div id="responseAre"></div>
+   <a href="pdf" download="caption.txt"><input type="button" value="Download"></a>
+   <a href="speak"><button>Speak</button></a>
+    </div>
+    <script src="{{ url_for('static', path='/js/permission.js') }}"></script></script>
+    <script src="{{ url_for('static', path='/js/innerscript.js') }}"></script></script>
+    <!-- <script src="innerscript.js"></script> -->
+  </body>
+</html>
+ 

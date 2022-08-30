@@ -1,0 +1,118 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>
+        Test Value
+    </title>
+    <script type="text/javascript">
+        function SelectedTextValue(ele) {
+            if (ele.selectedIndex > 0) {
+                var selectedText = ele.options[ele.selectedIndex].innerHTML;
+                var selectedValue = ele.value;
+                document.getElementById("a").value = selectedText;
+            }
+            else {
+                document.getElementById("a").value = "";
+            }
+        }
+
+        function SelectedTextValue1(ele) {
+            if (ele.selectedIndex > 0) {
+                var selectedText = ele.options[ele.selectedIndex].innerHTML;
+                var selectedValue = ele.value;
+                document.getElementById("b").value = selectedText;
+            }
+            else {
+                document.getElementById("b").value = "";
+            }
+        }
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous" ></script> 
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" /> 
+        <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>    
+    </script>
+        <link rel="stylesheet" href="style.css">
+        <style>
+            .cont{
+                top:20%;
+            height:auto;
+            }
+            .one{
+                background-color: rgb(33, 181, 218);
+                border-radius: 10px;
+                margin:2px;
+                padding:5px;
+            }
+        </style>
+</head>
+<body>
+    <div class="cont">
+    <form id="form1" runat="server">
+    <div align="center">
+       <h3> Select Source Language </h3> 
+        <select name="ddlContent" id="ddlContent" onchange="SelectedTextValue(this)">
+            <option selected="selected" value="">Language</option>
+    <option value="1">English</option>
+    <option value="2">Hindi</option>
+    <option value="3">Select Language</option>
+    <option value="4">Hindi</option>
+    <option value="5">Arabic</option>
+    <option value="6">Dutch</option>
+    <option value="7">English</option>
+    <option value="8">French</option>
+    <option value="9">German</option> 
+    <option value="10">Greek</option>
+    <option value="11">Hungarian</option>
+    <option value="12">Italian</option>
+    <option value="13">Japanese</option>
+    <option value="14">Korean</option>
+    <option value="15">Lithuanian</option>
+    <option value="16">Persian</option>
+    <option value="17">Portuguese</option>
+    <option value="18">Russian</option>
+    <option value="19">Spanish</option>
+    <option value="20">Swedish</option>
+        </select>
+        <input name="txtContent" type="text" id="a" />
+<!--------------------------------------------------------------------------------->
+<br><br><br><br>
+<h3> Select Target Language </h3> 
+       
+<select name="ddlContent" id="ddlContent" onchange="SelectedTextValue1(this)">
+    <option selected="selected" value="">Language</option>
+    <option value="1">English</option>
+    <option value="2">Hindi</option>
+    <option value="3">Select Language</option>
+    <option value="4">Hindi</option>
+    <option value="5">Arabic</option>
+    <option value="6">Dutch</option>
+    <option value="7">English</option>
+    <option value="8">French</option>
+    <option value="9">German</option> 
+    <option value="10">Greek</option>
+    <option value="11">Hungarian</option>
+    <option value="12">Italian</option>
+    <option value="13">Japanese</option>
+    <option value="14">Korean</option>
+    <option value="15">Lithuanian</option>
+    <option value="16">Persian</option>
+    <option value="17">Portuguese</option>
+    <option value="18">Russian</option>
+    <option value="19">Spanish</option>
+    <option value="20">Swedish</option>
+</select>
+<input name="txtContent1" type="text" id="b" />
+<br>
+<br>
+<center><input class ="one" type="button" value="Start" onclick="submitForm()"></center>
+    </div>
+    </form>
+    <div id="responseArea1"></div>
+    <div id="responseAre"></div>
+   <a href="pdf" download="caption.txt"><input class="one" type="button" value="Download"></a>
+   <a href="speak"><button class="one">Speak</button></a>
+</center>
+    </div>
+</div>
+    <script src="{{ url_for('static', path='/js/permission.js') }}"></script></script>
+    <script src="{{ url_for('static', path='/js/innerscript.js') }}"></script></script>
+</body>
+</html>

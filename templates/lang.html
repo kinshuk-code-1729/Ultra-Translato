@@ -1,0 +1,82 @@
+<html>
+   <head>
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+ 
+      <script type="text/javascript">
+         function submitForm() {
+             var formElement = document.getElementById('myForm');
+             var data = new FormData(formElement);
+             fetch('/submit', {
+                   method: 'POST',
+                   body: data,
+                 })
+                 .then(response => response.text())
+                 .then(data => {
+                   document.getElementById("responseArea").innerHTML = data;
+                 })
+                 .catch(error => {
+                   console.error(error);
+                 });
+         }
+      </script>
+
+      <style>
+        body{
+            background-color: azure;
+        }
+        .form{
+            margin: 10%;
+            
+        }
+        .main{
+            position: absolute;
+    top: 15%;
+    left: 17%;
+    transform: (-50%, -50%);
+    background: linear-gradient(rgba(10, 7, 7, 0), rgba(87, 77, 77, 0.1));
+    width: 60%;
+    height: auto;
+    /*auto*/
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 7px 7px 60px #000;
+    margin-bottom: 40vh;
+
+
+        }
+        #responseArea{
+            border:2px solid #000;
+            padding: 10%;
+        }
+      </style>
+      
+   </head>
+   <body>
+    
+    <div class="main">
+        <div class="form">
+     <form method="post" id="myForm">
+         <label for="a" style="font-size: 20px">Input language:</label>
+         <input type="text" name="a" id="a" />
+
+         <label for="b" style="font-size: 20px">Output language:</label>
+         <input type="text" name="b" id="b" />
+         <input type="button" value="Start" onclick="submitForm(webaudio_tooling_obj()) ">
+      </form>
+
+    </div>
+
+      <div id="responseArea"></div>
+    </div>
+
+      <script src="permission.js"></script>
+   </body>
+</html>

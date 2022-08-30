@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<center lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ultra Translato</title>
+    <link href="{{ url_for('static', path='/css/style.css') }}" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=League+Gothic&family=Montserrat:wght@900&family=Ubuntu&display=swap");
+    </style>
+    <style>
+      h1{
+        font-style: oblique;
+        font-weight:bolder;
+      }
+      img{
+        height: 100px;
+        width: 150px;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="{{ url_for('static', path='/img/logo.png') }}" alt="" >
+
+    <h1>Ministry Of External Affairs</h1>
+    <br>
+    <h2>LC ID 1075</h2>
+    <br>
+    <div class="cont">
+      <p id="wel">ULTRA TRANSLATO</p>
+      <br />
+      <br />
+
+      <br />
+      <br />
+      
+        <a href="first.html">
+          <div class="cont2"><img id="audio" src="{{ url_for('static', path='/img/mic.png') }}" alt="" />AUDIO</div>
+        </a>
+  
+        <a href="second.html"
+          ><div class="cont2">
+            <img id="audio" src="{{ url_for('static', path='/img/video.jpg') }}" alt="" />VIDEO
+          </div></a
+        >
+  
+        <a href="third.html"
+          ><div class="cont2">
+            <img id="audio" src="{{ url_for('static', path='/img/text2.png') }}" alt="" />TEXT
+          </div></a
+        >
+  
+        <a href="fourth.html"
+          ><div class="cont2">
+            <img id="audio" src="{{ url_for('static', path='/img/pdfdoc.png') }}" alt="" />DOCUMENT
+          </div></a
+        >
+      
+    
+    </div>
+  
+  
+  </body>
+</html>
