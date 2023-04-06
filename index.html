@@ -452,7 +452,7 @@ a {
         <h1>our Expertise</h1>
       </div>
       <div class="grid-wrapper">
-        <div class="grid-box">
+        <div id="audio" class="grid-box">
           <div class="icon-title">
             <img src="./images/skill-1.png" alt="" />
             <h2>Audio</h2>
@@ -464,7 +464,7 @@ a {
             Facere.
           </p>
         </div>
-        <div class="grid-box">
+        <div id="video" class="grid-box">
           <div class="icon-title">
             <img src="./images/" alt="" />
             <h2>Video</h2>
@@ -476,7 +476,7 @@ a {
             Facere.
           </p>
         </div>
-        <div class="grid-box">
+        <div id="text" class="grid-box">
           <div class="icon-title">
             <img src="./images/skill-3.png" alt="" />
             <h2>Text</h2>
@@ -488,7 +488,7 @@ a {
             Facere.
           </p>
         </div>
-        <div class="grid-box">
+        <div id="document" class="grid-box">
           <div class="icon-title">
             <img src="./images/skill-4.png" alt="" />
             <h2>Document</h2>
@@ -527,15 +527,38 @@ a {
     </div>
 
     <script>
+
+    let divs = Array.from(document.getElementsByClassName('grid-box'));
+    // console.log(divs);
+    divs.forEach((div) => {
+        div.addEventListener('click', () => {
+            if (div.getAttribute('id') === 'audio') {
+                window.location.href = 'audio.html';
+            }
+            else if (div.getAttribute('id') === 'video') {
+                window.location.href = 'video.html';
+            }
+            else if (div.getAttribute('id') === 'text') {
+                window.location.href = 'text.html';
+            }
+            else if (div.getAttribute('id') === 'document') {
+                window.location.href = 'document.html';
+            }
+        });
+        console.log(div);
+    });
+
+
+
     let togglebtn = document.querySelector(".toggle-btn");
     let navbar = document.querySelector(".navbar");
 
     togglebtn.addEventListener("click", () => {
     navbar.classList.toggle("mobile-nav");
     });
-    document.getElementById('btnNextPage').addEventListener('click', ()=>{
-    window.location.href = 'options.html';
-    });
+    // document.getElementById('btnNextPage').addEventListener('click', ()=>{
+    // window.location.href = 'options.html';
+    // });
     </script>
   </body>
 </html>
