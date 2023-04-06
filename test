@@ -1,0 +1,58 @@
+// define a variable to store the voice input
+  let voiceInput = '';
+  function takeInput() {
+    // create a SpeechRecognition object
+    const recognition = new window.webkitSpeechRecognition();
+
+    // set properties for the recognition object
+    recognition.lang = 'en-US'; // set the language to US English
+
+
+
+    // add an event listener for the 'result' event
+    recognition.addEventListener('result', (event) => {
+      // extract the first transcription from the event results
+      const transcript = event.results[0][0].transcript;
+
+      // add the transcription to the voice input variable
+      voiceInput += transcript;
+    });
+
+    // add an event listener for the 'end' event
+    recognition.addEventListener('end', () => {
+      // do something with the voice input
+      console.log(voiceInput);
+      // create a div 
+      let div = document.createElement('div');
+      let p = document.createElement('p');
+      console.log("voiceInput = " + voiceInput);
+      p.textContent = voiceInput;
+      div.appendChild(p);
+      console.log(div);
+      let box = document.querySelector('.box');
+      box.appendChild(div);
+    });
+
+    // start the recognition process
+    recognition.start();
+  }
+
+
+
+  
+  nav {
+    background-color: black;
+    color: white;
+    height: 47px;
+    width: 100%;
+
+    text-align: center;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0px;
+  }
+
+
+  .text-center{
+    text-align: center;
+}
