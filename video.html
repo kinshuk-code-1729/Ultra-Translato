@@ -24,7 +24,7 @@
             position: sticky;
             top: 0px;
         }
-        #inpLang{
+        select{
             margin-top: 50px;
         }
         div{
@@ -39,9 +39,12 @@
             <h1>UltraTranslato</h1>
         </nav>
 
+        <div class="container d-flex justify-content-center align-items-center mt-3">
+            <button id="inpBtnLang" class="btn btn-outline-primary">Choose Input Language</button>
+        </div>
+
         <div id="inpLang" class="container">
-            <h3>Select Language For Giving Input</h3>
-            <select id="langSelect" class="form-select" aria-label="Default select example">
+            <select id="langSelect" class="form-select form-select-sm d-none " aria-label="Default select example">
                 <option value="AF">Afrikaans</option>
                 <option value="SQ">Albanian</option>
                 <option value="AR">Arabic</option>
@@ -115,6 +118,9 @@
                 <option value="CY">Welsh</option>
                 <option value="XH">Xhosa</option>
             </select>
+            <div id="inputBox" class="container">
+
+            </div>
         </div>
 
         <div id="result" class="container">
@@ -122,92 +128,94 @@
         </div>
 
 
-        <div id="output" class="container mx-auto d-none">
-            <div id="outLang" class="container dropdown">
-                <h3>Select Language For getting Output</h3>
-                <select id="langSelectOp" class="form-select dropdown-toggle" aria-label="Default select example">
-                    <option value="AF">Afrikaans</option>
-                    <option value="SQ">Albanian</option>
-                    <option value="AR">Arabic</option>
-                    <option value="HY">Armenian</option>
-                    <option value="EU">Basque</option>
-                    <option value="BN">Bengali</option>
-                    <option value="BG">Bulgarian</option>
-                    <option value="CA">Catalan</option>
-                    <option value="KM">Cambodian</option>
-                    <option value="ZH">Chinese (Mandarin)</option>
-                    <option value="HR">Croatian</option>
-                    <option value="CS">Czech</option>
-                    <option value="DA">Danish</option>
-                    <option value="NL">Dutch</option>
-                    <option value="EN">English</option>
-                    <option value="ET">Estonian</option>
-                    <option value="FJ">Fiji</option>
-                    <option value="FI">Finnish</option>
-                    <option value="FR">French</option>
-                    <option value="KA">Georgian</option>
-                    <option value="DE">German</option>
-                    <option value="EL">Greek</option>
-                    <option value="GU">Gujarati</option>
-                    <option value="HE">Hebrew</option>
-                    <option value="HI">Hindi</option>
-                    <option value="HU">Hungarian</option>
-                    <option value="IS">Icelandic</option>
-                    <option value="ID">Indonesian</option>
-                    <option value="GA">Irish</option>
-                    <option value="IT">Italian</option>
-                    <option value="JA">Japanese</option>
-                    <option value="JW">Javanese</option>
-                    <option value="KO">Korean</option>
-                    <option value="LA">Latin</option>
-                    <option value="LV">Latvian</option>
-                    <option value="LT">Lithuanian</option>
-                    <option value="MK">Macedonian</option>
-                    <option value="MS">Malay</option>
-                    <option value="ML">Malayalam</option>
-                    <option value="MT">Maltese</option>
-                    <option value="MI">Maori</option>
-                    <option value="MR">Marathi</option>
-                    <option value="MN">Mongolian</option>
-                    <option value="NE">Nepali</option>
-                    <option value="NO">Norwegian</option>
-                    <option value="FA">Persian</option>
-                    <option value="PL">Polish</option>
-                    <option value="PT">Portuguese</option>
-                    <option value="PA">Punjabi</option>
-                    <option value="QU">Quechua</option>
-                    <option value="RO">Romanian</option>
-                    <option value="RU">Russian</option>
-                    <option value="SM">Samoan</option>
-                    <option value="SR">Serbian</option>
-                    <option value="SK">Slovak</option>
-                    <option value="SL">Slovenian</option>
-                    <option value="ES">Spanish</option>
-                    <option value="SW">Swahili</option>
-                    <option value="SV">Swedish </option>
-                    <option value="TA">Tamil</option>
-                    <option value="TT">Tatar</option>
-                    <option value="TE">Telugu</option>
-                    <option value="TH">Thai</option>
-                    <option value="BO">Tibetan</option>
-                    <option value="TO">Tonga</option>
-                    <option value="TR">Turkish</option>
-                    <option value="UK">Ukrainian</option>
-                    <option value="UR">Urdu</option>
-                    <option value="UZ">Uzbek</option>
-                    <option value="VI">Vietnamese</option>
-                    <option value="CY">Welsh</option>
-                    <option value="XH">Xhosa</option>
-                </select>
-            </div>
-
-
+        <div id="outLang" class="container dropdown d-none">
+            <select id="langSelectOp" class="form-select form-select-sm dropdown-toggle" aria-label="Default select example">
+                <option value="AF">Afrikaans</option>
+                <option value="SQ">Albanian</option>
+                <option value="AR">Arabic</option>
+                <option value="HY">Armenian</option>
+                <option value="EU">Basque</option>
+                <option value="BN">Bengali</option>
+                <option value="BG">Bulgarian</option>
+                <option value="CA">Catalan</option>
+                <option value="KM">Cambodian</option>
+                <option value="ZH">Chinese (Mandarin)</option>
+                <option value="HR">Croatian</option>
+                <option value="CS">Czech</option>
+                <option value="DA">Danish</option>
+                <option value="NL">Dutch</option>
+                <option value="EN">English</option>
+                <option value="ET">Estonian</option>
+                <option value="FJ">Fiji</option>
+                <option value="FI">Finnish</option>
+                <option value="FR">French</option>
+                <option value="KA">Georgian</option>
+                <option value="DE">German</option>
+                <option value="EL">Greek</option>
+                <option value="GU">Gujarati</option>
+                <option value="HE">Hebrew</option>
+                <option value="HI">Hindi</option>
+                <option value="HU">Hungarian</option>
+                <option value="IS">Icelandic</option>
+                <option value="ID">Indonesian</option>
+                <option value="GA">Irish</option>
+                <option value="IT">Italian</option>
+                <option value="JA">Japanese</option>
+                <option value="JW">Javanese</option>
+                <option value="KO">Korean</option>
+                <option value="LA">Latin</option>
+                <option value="LV">Latvian</option>
+                <option value="LT">Lithuanian</option>
+                <option value="MK">Macedonian</option>
+                <option value="MS">Malay</option>
+                <option value="ML">Malayalam</option>
+                <option value="MT">Maltese</option>
+                <option value="MI">Maori</option>
+                <option value="MR">Marathi</option>
+                <option value="MN">Mongolian</option>
+                <option value="NE">Nepali</option>
+                <option value="NO">Norwegian</option>
+                <option value="FA">Persian</option>
+                <option value="PL">Polish</option>
+                <option value="PT">Portuguese</option>
+                <option value="PA">Punjabi</option>
+                <option value="QU">Quechua</option>
+                <option value="RO">Romanian</option>
+                <option value="RU">Russian</option>
+                <option value="SM">Samoan</option>
+                <option value="SR">Serbian</option>
+                <option value="SK">Slovak</option>
+                <option value="SL">Slovenian</option>
+                <option value="ES">Spanish</option>
+                <option value="SW">Swahili</option>
+                <option value="SV">Swedish </option>
+                <option value="TA">Tamil</option>
+                <option value="TT">Tatar</option>
+                <option value="TE">Telugu</option>
+                <option value="TH">Thai</option>
+                <option value="BO">Tibetan</option>
+                <option value="TO">Tonga</option>
+                <option value="TR">Turkish</option>
+                <option value="UK">Ukrainian</option>
+                <option value="UR">Urdu</option>
+                <option value="UZ">Uzbek</option>
+                <option value="VI">Vietnamese</option>
+                <option value="CY">Welsh</option>
+                 <option value="XH">Xhosa</option>
+            </select>
         </div>
 
+        <div id="output" class="container">
+
+        </div>
 
     </body>
 
     <script>
+        document.getElementById('inpBtnLang').addEventListener('click', function() {
+            const mySelect = document.getElementById('langSelect');
+            mySelect.classList.replace('d-none', 'd-block');
+        });
         const mySelect = document.getElementById('langSelect');
         console.log(mySelect);
         mySelect.addEventListener('change', function() {
@@ -230,12 +238,14 @@
             stop.textContent = 'stop';
             btnDiv.appendChild(start);
             btnDiv.appendChild(stop);
+            div.innerHTML = "";
             div.appendChild(btnDiv);
             div.style.backgroundImage = "url('images/audio.png')";
             div.style.backgroundRepeat = 'no-repeat';
             div.style.backgroundSize = 'cover';
             div.classList.add('shadow', 'p-3', 'mb-5', 'bg-white', 'rounded', 'm-4', 'h-50');
-            document.getElementById('inpLang').appendChild(div);
+            document.getElementById('inputBox').innerHTML = "";
+            document.getElementById('inputBox').appendChild(div);
 
             // jaise hi user start button par click karta hai... 
             start.addEventListener('click', function() {
@@ -245,50 +255,73 @@
                 stop.classList.replace('d-none', 'd-inline');
                 stop.classList.replace('btn-outline-dark', 'btn-outline-light');
                 start.classList.replace('btn-outline-dark', 'btn-outline-light');
+                start.classList.add('d-none');
             });
             // jaise hi user stop button par click karta hai... 
             stop.addEventListener('click', function() {
+
                 div.removeChild(gifDiv);
                 div.style.backgroundImage = "url('images/audio.png')";
                 stop.classList.replace('btn-outline-light', 'btn-outline-dark');
                 start.classList.replace('btn-outline-light', 'btn-outline-dark');   
 
                 const userInput = document.createElement('div');
+                userInput.id = 'ui';
                 userInput.classList.add('shadow', 'p-3', 'mb-5', 'rounded', 'm-4', 'h-50', 'bg-dark');
                 const p = document.createElement('p');
                 p.textContent = "In this example, we first get a reference to the HTML div element with the ID of myDiv using the document.getElementById() method. We then set the backgroundColor property of the div element to the color blue using the style property. You can replace blue with any valid CSS color value, such as a hexadecimal color code, an RGB color value, or a color name.";
                 p.style.color = 'white';
                 userInput.appendChild(p);
-                result.appendChild(userInput);
+                document.getElementById('result').innerHTML = "";
+                document.getElementById('result').appendChild(userInput);
+                document.getElementById('ui').scrollIntoView();
 
                 const outBtn = document.createElement('button');
                 outBtn.id = 'outputBtn';
                 outBtn.classList.add('btn', 'btn-outline-primary', 'mx-auto', 'd-block');
-                outBtn.textContent = 'see output';
+                outBtn.textContent = 'Choose Output Language';
                 result.appendChild(outBtn);
+                document.getElementById('outputBtn').scrollIntoView();
 
                 // jaise hi use outBtn par click kare...  
-                outBtn.addEventListener('click', function() {
-                    const op = document.getElementById('output');
-                    op.classList.replace('d-none', 'd-block');
-                    op.classList.add('shadow', 'p-3', 'mb-5', 'bg-white', 'rounded', 'm-4');
-                    const mySelectOp = document.getElementById('langSelectOp');
-                    mySelectOp.addEventListener('change', ()=>{
-                        console.log(mySelectOp);
-                        const selectedOption = mySelectOp.options[mySelectOp.selectedIndex];
-                        console.log(selectedOption);
-                        const opText = document.createElement('div');
-                        console.log(opText);
-                        opText.classList.add('shadow', 'p-3', 'mb-5', 'rounded', 'm-4', 'h-50', 'bg-dark');
+                // outBtn.addEventListener('click', function() {
+                //     const op = document.getElementById('output');
+                //     op.classList.replace('d-none', 'd-block');
+                //     op.classList.add('shadow', 'p-3', 'mb-5', 'bg-white', 'rounded', 'm-4');
+                //     const mySelectOp = document.getElementById('langSelectOp');
+                //     mySelectOp.addEventListener('change', ()=>{
+                //         console.log(mySelectOp);
+                //         const selectedOption = mySelectOp.options[mySelectOp.selectedIndex];
+                //         console.log(selectedOption);
+                //         const opText = document.createElement('div');
+                //         console.log(opText);
+                //         opText.classList.add('shadow', 'p-3', 'mb-5', 'rounded', 'm-4', 'h-50', 'bg-dark');
 
+                //         document.getElementById('output').appendChild(opText);
+                //     });
+                // });
+                outBtn.addEventListener('click', function(){
+                    const opLang = document.getElementById('outLang');
+                    opLang.classList.replace('d-none', 'd-block');
+                    document.getElementById('outLang').scrollIntoView();
+                    const selectOp = document.getElementById('langSelectOp');
+                    selectOp.addEventListener('change', function(){
+                        const selectedOption = selectOp.options[selectOp.selectedIndex];
+
+                        const opText = document.createElement('div');
+                        opText.id = 'ot';
+                        opText.classList.add('shadow', 'p-3', 'mb-5', 'rounded', 'm-4', 'h-50', 'bg-dark');
+                        const p = document.createElement('p');
+                        p.textContent = "In this example, we first get a reference to the HTML div element with the ID of myDiv using the document.getElementById() method. We then set the backgroundColor property of the div element to the color blue using the style property. You can replace blue with any valid CSS color value, such as a hexadecimal color code, an RGB color value, or a color name.";
+                        p.style.color = 'white';
+                        opText.appendChild(p);
+                        document.getElementById('output').innerHTML = "";
                         document.getElementById('output').appendChild(opText);
+                        document.getElementById('output').scrollIntoView();
+
                     });
                 });
-
-
             }); 
-
-            
         });
     </script>
 </html>
