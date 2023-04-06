@@ -271,7 +271,6 @@
                             donebtnOp.scrollIntoView();
                             donebtnOp.addEventListener('click', function() {
                                 speakOp.classList.replace('d-none', 'd-inline');
-                                
                             });
                             speakOp.addEventListener('click', speakTextOp);
                             const synth = window.speechSynthesis;
@@ -311,12 +310,7 @@
                         gifImg.classList.replace('d-inline', 'd-none');
                     };
                 }
-
-                
-                speak.addEventListener('click', speakText);
-                // speakOp.addEventListener('click', speakTextOp);
-                // text to voice
-                
+                speak.addEventListener('click', speakText);                
             });
         });
         
