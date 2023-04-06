@@ -1,0 +1,207 @@
+<html lang="en">
+
+<!-- https://img.freepik.com/free-photo/abstract-luxury-gradient-blue-background-smooth-dark-blue-with-black-vignette-studio-banner_1258-63770.jpg?w=2000 -->
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+
+  <!--     google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@800&family=Oswald:wght@500&family=Raleway:wght@900&family=Roboto&display=swap" rel="stylesheet">
+  <!--     google font -->
+
+  <style>
+    * {
+      margin: 0;
+
+      padding: 0;
+      box-sizing: border-box;
+
+    }
+
+    body {
+      background-image: url('https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80');
+      background-color: rgba(255, 255, 255, 0.1);
+
+    }
+
+    .box {
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+      height: 300px;
+      width: 500px;
+      text-align: center;
+      color: white;
+      font-family: 'Roboto', sans-serif;
+      font-size: 2em;
+      margin: 10px auto 0 auto;
+      border-radius: 8px;
+      color: gold;
+    }
+
+    #video {
+      background-image: url('images/video.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      margin-top: 0px;
+      transition: background-image 0.5s ease;
+    }
+
+    #audio {
+      background-image: url('images/audio.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      transition: background-image 0.5s ease;
+    }
+
+    #File {
+      background-image: url('images/file.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      transition: background-image 0.5s ease;
+    }
+
+    #text {
+      background-image: url('images/text.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      transition: background-image 0.5s ease;
+    }
+
+    button {
+      border-style: none;
+      padding: 10px 15px 10px 15px;
+      border-radius: 6px;
+      color: blue;
+      border: 1px solid blue;
+      margin-top: 74px;
+    }
+
+    nav {
+      background-color: black;
+      color: white;
+      height: 65px;
+      width: 100%;
+      font-family: 'Baloo Bhaijaan 2', cursive;
+      text-align: center;
+      padding-top: 10px;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+      position: sticky;
+      top: 0px;
+    }
+
+    .about {
+      font-size: 20px;
+      padding: 50px 147px;
+      text-align: center;
+    }
+
+    .container1 {
+      display: flex;
+      flex-direction: row;
+      margin-top: 5px;
+      margin-bottom: 50px;
+    }
+
+    @media (max-width: 1066px) {
+      .container1 {
+        flex-direction: column;
+      }
+    }
+
+    /*     video.box:hover{
+      background-image:url('https://img.freepik.com/free-photo/abstract-luxury-gradient-blue-background-smooth-dark-blue-with-black-vignette-studio-banner_1258-63770.jpg?w=2000');
+    } */
+  </style>
+</head>
+
+<body>
+
+  <!-- nav -->
+  <nav>
+    <h1>UltraTranslato</h1>
+  </nav>
+  <!-- nav -->
+
+
+
+  <!--     first div created by sandeep -->
+
+  <div class="container1">
+    <div class="box" id="video">
+      <h1>Video</h1>
+      <button id="videoPage">Click me</button>
+
+    </div>
+
+    <div class="box" id="audio">
+      <h1>Audio</h1>
+      <button id="audioPage">Click me</button>
+
+    </div>
+  </div>
+
+  <div class="container1">
+    <div class="box" id="file">
+      <h1>File Upload</h1>
+      <button id="filePage">Click me</button>
+
+    </div>
+
+
+    <div class="box" id="text">
+      <h1>Upload Text</h1>
+      <button id="textPage">Click me</button>
+    </div>
+
+  </div>
+
+  <script>
+    document.getElementById('videoPage').addEventListener('click', () => {
+    window.location.href = 'video.html';
+  });
+  
+
+    const container = Array.from(document.getElementsByClassName("container1"));
+      const childrenElements = [];
+      
+      for (let i = 0; i < container.length; i++) {
+        const containerChildren = Array.from(container[i].getElementsByTagName("div"));
+        childrenElements.push(...containerChildren);
+      }
+      
+      console.log(childrenElements);
+
+    
+    childrenElements.forEach(element => {
+      element.addEventListener('mouseover', (e) => {
+        e.target.style.backgroundImage = "url('images/black.png')";
+      });
+
+      element.addEventListener('mouseout', (e) => {
+        let id = e.target.id;
+        if(id === "video"){
+          e.target.style.backgroundImage = "url('images/video.png')";
+        }
+        else if(id === "audio"){
+          e.target.style.backgroundImage = "url('images/audio.png')";
+        }
+        else if(id === "file"){
+          e.target.style.backgroundImage = "url('images/file.png')";
+        }
+        else if(id === "text"){
+          e.target.style.backgroundImage = "url('images/text.png')";
+        }
+      });
+      
+    });
+
+  </script>
+</body>
+
+</html>
