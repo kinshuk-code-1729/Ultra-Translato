@@ -1,5 +1,5 @@
 function audioSubmit() {
-    var formElement = document.getElementById('mic');
+    var formElement = document.getElementById('inputMic');
     var data = new FormData(formElement);
     
     fetch('/audio.html', {
