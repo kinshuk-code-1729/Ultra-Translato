@@ -222,19 +222,19 @@
                 const donebtn = document.createElement('button');
                 donebtn.classList.add('btn', 'btn-outline-primary', 'd-block', 'mx-auto');
                 donebtn.textContent = 'Click Here!';
-                const speak = document.createElement('button');
-                speak.classList.add('btn', 'btn-outline-primary', 'd-none');
-                speak.textContent = 'Listen Your Input';
+                // const speak = document.createElement('button');
+                // speak.classList.add('btn', 'btn-outline-primary', 'd-none');
+                // speak.textContent = 'Listen Your Input';
                 const gifImg = document.createElement('img');
                 gifImg.src = 'images/sound.gif';
                 gifImg.classList.add('d-none', 'm-2', 'rounded-circle');
                 gifImg.style.width = '50px';
-                document.getElementById('inputBox').appendChild(speak);
+                // document.getElementById('inputBox').appendChild(speak);
                 document.getElementById('inputBox').appendChild(gifImg);
 
                 document.getElementById('inputBox').appendChild(donebtn);
                 donebtn.addEventListener('click', function() {
-                    speak.classList.replace('d-none', 'd-inline');
+                    // speak.classList.replace('d-none', 'd-inline');
                     document.getElementById('opLang').classList.replace('d-none', 'd-block');
                     document.getElementById('opLang').classList.add('mx-auto');
                     document.getElementById('opLang').addEventListener('click', function() {
@@ -258,59 +258,59 @@
                             const donebtnOp = document.createElement('button');
                             donebtnOp.classList.add('btn', 'btn-outline-primary', 'd-block', 'mx-auto', 'mb-5');
                             donebtnOp.textContent = 'Click Here!';
-                            let speakOp = document.createElement('button');
-                            speakOp.classList.add('btn', 'btn-outline-primary', 'd-none');
-                            speakOp.textContent = 'Listen Your Input';
+                            // let speakOp = document.createElement('button');
+                            // speakOp.classList.add('btn', 'btn-outline-primary', 'd-none');
+                            // speakOp.textContent = 'Listen Your Input';
                             const gifImgOp = document.createElement('img');
                             gifImgOp.src = 'images/sound.gif';
                             gifImgOp.classList.add('d-none', 'm-2', 'rounded-circle');
                             gifImgOp.style.width = '50px';
-                            document.getElementById('outputBox').appendChild(speakOp);
+                            // document.getElementById('outputBox').appendChild(speakOp);
                             document.getElementById('outputBox').appendChild(gifImgOp);
                             document.getElementById('outputBox').appendChild(donebtnOp);
                             donebtnOp.scrollIntoView();
                             donebtnOp.addEventListener('click', function() {
-                                speakOp.classList.replace('d-none', 'd-inline');
+                                // speakOp.classList.replace('d-none', 'd-inline');
                             });
-                            speakOp.addEventListener('click', speakTextOp);
-                            const synth = window.speechSynthesis;
-                            function speakTextOp() {
-                                gifImgOp.classList.replace('d-none', 'd-inline');
-                                // Create a new SpeechSynthesisUtterance object
-                                const utterance = new SpeechSynthesisUtterance(outputArea.value);
+                            // speakOp.addEventListener('click', speakTextOp);
+                            // const synth = window.speechSynthesis;
+                            // function speakTextOp() {
+                            //     gifImgOp.classList.replace('d-none', 'd-inline');
+                            //     // Create a new SpeechSynthesisUtterance object
+                            //     const utterance = new SpeechSynthesisUtterance(outputArea.value);
                                 
-                                // Speak the text
-                                synth.speak(utterance);
-                                gifImgOp.classList.replace('d-none', 'd-inline');
+                            //     // Speak the text
+                            //     synth.speak(utterance);
+                            //     gifImgOp.classList.replace('d-none', 'd-inline');
 
-                                // end 
-                                utterance.onend = function () {
-                                    // Hide the GIF when speaking is done
-                                    gifImgOp.classList.replace('d-inline', 'd-none');
-                                };
-                            }
+                            //     // end 
+                            //     utterance.onend = function () {
+                            //         // Hide the GIF when speaking is done
+                            //         gifImgOp.classList.replace('d-inline', 'd-none');
+                            //     };
+                            // }
                         });
                     });
 
                 });
 
                 // text to voice
-                const synth = window.speechSynthesis;
-                function speakText() {
-                    // Create a new SpeechSynthesisUtterance object
-                    const utterance = new SpeechSynthesisUtterance(outputArea.value);
+                // const synth = window.speechSynthesis;
+                // function speakText() {
+                //     // Create a new SpeechSynthesisUtterance object
+                //     const utterance = new SpeechSynthesisUtterance(outputArea.value);
                     
-                    // Speak the text
-                    synth.speak(utterance);
-                    gifImg.classList.replace('d-none', 'd-inline');
+                //     // Speak the text
+                //     synth.speak(utterance);
+                //     gifImg.classList.replace('d-none', 'd-inline');
 
-                    // end 
-                    utterance.onend = function () {
-                        // Hide the GIF when speaking is done
-                        gifImg.classList.replace('d-inline', 'd-none');
-                    };
-                }
-                speak.addEventListener('click', speakText);                
+                //     // end 
+                //     utterance.onend = function () {
+                //         // Hide the GIF when speaking is done
+                //         gifImg.classList.replace('d-inline', 'd-none');
+                //     };
+                // }
+                // speak.addEventListener('click', speakText);                
             });
         });
         
