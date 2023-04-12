@@ -17,7 +17,7 @@ mySelect.addEventListener('change', function() {
     const btnDiv = document.createElement('div');
     const gifDiv = document.createElement('div');
     const gif = document.createElement('img');
-    gif.src = "{url_for('static', path='/img/audioGif1.gif')}";
+    gif.src = "url('{{ url_for('static', path='/img/audioGif1.gif') }}')";
     btnDiv.classList.add('container', 'd-flex', 'justify-content-center', 'align-items-center');
     gifDiv.classList.add('container', 'd-flex', 'justify-content-center', 'align-items-center', 'mt-4');
     start.classList.add('btn', 'btn-outline-dark');
