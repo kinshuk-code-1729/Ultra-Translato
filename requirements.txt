@@ -7,8 +7,9 @@ gtts
 uvicorn
 moviepy
 numpy
+jinja2
 #sqlalchemy
 #passlib
 #bcrypt
 #python-jose
-#python-multipart
+python-multipart
