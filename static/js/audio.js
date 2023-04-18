@@ -17,7 +17,7 @@ mySelect.addEventListener('change', function() {
     const btnDiv = document.createElement('div');
     const gifDiv = document.createElement('div');
     const gif = document.createElement('img');
-    gif.src = "url('{{ url_for('static', path='/img/audioGif1.gif') }}')";
+    gif.src = 'static/img/audioGif1.gif'
     btnDiv.classList.add('container', 'd-flex', 'justify-content-center', 'align-items-center');
     gifDiv.classList.add('container', 'd-flex', 'justify-content-center', 'align-items-center', 'mt-4');
     start.classList.add('btn', 'btn-outline-dark');
@@ -28,7 +28,7 @@ mySelect.addEventListener('change', function() {
     btnDiv.appendChild(stop);
     div.innerHTML = "";
     div.appendChild(btnDiv);
-    div.style.backgroundImage = "url('{{ url_for('static', path='/img/audio.png') }}')";
+    div.style.backgroundImage = "url('static/img/audio.png')";
     div.style.backgroundRepeat = 'no-repeat';
     div.style.backgroundSize = 'cover';
     div.classList.add('shadow', 'p-3', 'mb-5', 'bg-white', 'rounded', 'm-4', 'h-50');
@@ -49,7 +49,7 @@ mySelect.addEventListener('change', function() {
     stop.addEventListener('click', function() {
 
         div.removeChild(gifDiv);
-        div.style.backgroundImage = "url('{{ url_for('static', path='/img/audio.png') }}')";
+        div.style.backgroundImage ="url('{{ url_for('static', path='/img/audio.png') }}')";
         stop.classList.replace('btn-outline-light', 'btn-outline-dark');
         start.classList.replace('btn-outline-light', 'btn-outline-dark');   
 
