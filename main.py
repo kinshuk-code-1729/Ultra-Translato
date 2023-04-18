@@ -41,6 +41,21 @@ Output_language = {"Arabic":"ar","Assamese":"as",
                 "Indonesian":"id","Japanese":"ja",
                 "Bangla":"bn","Nepali":"ne"}
 
+@app.post("/submit")
+async def submit(request: Request, a: str = Form(), b: str = Form()):
+    r= sr.Recognizer()
+    a = a.title()
+    b = b.title()
+
+    with sr.Microphone() as Source:  
+        r.adjust_for_ambient_noise(Source, duration=0.2)
+        audio2 = r.listen(Source)
+        submit.MyText = r.recognize_google(audio2, language =Input_language[a])
+        submit.MyText = submit.MyText.lower()
+        print(submit.MyText)
+        return submit.MyText
+
+
 # @app.post("/audio.html")
 # async def audio(request: Request, a: str = Form(), b: str = Form()):
 #     r= sr.Recognizer()
